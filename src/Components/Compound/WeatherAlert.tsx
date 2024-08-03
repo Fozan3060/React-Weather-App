@@ -9,7 +9,7 @@ import WeatherAlertHook from "../../CustomeHooks/WeatherAlertHook";
 const WeatherAlert: React.FC = () => {
   const { searchCity } = useWeatherContext();
 
-  const { isError, data } = WeatherAlertHook({ searchCity });
+  const { data } = WeatherAlertHook({ searchCity });
   useEffect(() => {
     if (data && data.alerts && data.alerts.alert.length > 0) {
       data.alerts.alert.forEach((alert) => {
@@ -42,15 +42,11 @@ const WeatherAlert: React.FC = () => {
           {
             duration: 5000,
             id: alert.desc,
-          },
+          }
         );
       });
     }
   }, [data]);
-
-  if (isError) {
-    return <div data-testid="weatherAlert_error">Error: {isError}</div>;
-  }
 
   const alerts = data?.alerts?.alert || [];
 
@@ -96,7 +92,7 @@ const WeatherAlert: React.FC = () => {
             </div>
           </div>
         ),
-        { duration: Infinity, id: "Notification" },
+        { duration: Infinity, id: "Notification" }
       );
     }
   };
