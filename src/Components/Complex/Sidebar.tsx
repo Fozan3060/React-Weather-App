@@ -1,21 +1,17 @@
 import React, { Suspense, lazy } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { TiWeatherDownpour } from "react-icons/ti";
 import Searchbar from "../Compound/Searchbar";
 import { useWeatherContext } from "../../Context/WeatherContext";
 import LazyCurrentWeatherCard from "../lazyloaded/LazyCurrentWeatherCard";
 import LazyTemperatureChart from "../lazyloaded/LazyTemperatureChart";
 import ThemeChanger from "../Compound/ThemeChanger";
+import SidebarDefaultImages from "../Default_Fallback/SidebarDefaultImages";
 
 const TemperatureChart = lazy(() => import("../Compound/TemperatureChart"));
 const CurrentWeatherCard = lazy(() => import("../Compound/CurrentWeatherCard"));
 
 const FallbackComponent: React.FC = () => (
-  <div role="alert">
-    <h1 className="text-center mt-5 text-white">
-      Please Make Sure Such City Exists
-    </h1>
-  </div>
+  <SidebarDefaultImages text="Incorrect City" />
 );
 
 const Sidebar: React.FC = () => {
@@ -43,20 +39,7 @@ const Sidebar: React.FC = () => {
                 <TemperatureChart />
               </>
             ) : (
-              <div className="flex justify-center w-[80%] lg:gap-0 sm:gap-10 flex-col sm:flex-row items-center lg:flex-col">
-                <div className=" h-80 w-[100%] bg-opacity-10 bg-white rounded-lg mt-10">
-                  <h1 className="text-center mt-10 dark:text-white text-black">
-                    No City Searched
-                  </h1>
-                  <TiWeatherDownpour className="m-auto " size={200} />
-                </div>
-                <div className=" h-42 w-[100%] bg-opacity-10 bg-white rounded-lg mt-4">
-                  <h1 className="text-center mt-10 dark:text-white text-black">
-                    No City Searched
-                  </h1>
-                  <TiWeatherDownpour className="m-auto mb-5" size={180} />
-                </div>
-              </div>
+              <SidebarDefaultImages text="No City Searched" />
             )}
           </Suspense>
         </ErrorBoundary>
