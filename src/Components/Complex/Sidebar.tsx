@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { TiWeatherDownpour } from "react-icons/ti";
 import Searchbar from "../Compound/Searchbar";
 import { useWeatherContext } from "../../Context/WeatherContext";
 import LazyCurrentWeatherCard from "../lazyloaded/LazyCurrentWeatherCard";
@@ -42,9 +43,20 @@ const Sidebar: React.FC = () => {
                 <TemperatureChart />
               </>
             ) : (
-              <h1 className="text-center mt-5 dark:text-white text-black">
-                No City Searched
-              </h1>
+              <>
+                <div className="w-3/4 h-80 bg-opacity-10 bg-white rounded-lg mt-10">
+                  <h1 className="text-center mt-10 dark:text-white text-black">
+                    No City Searched
+                  </h1>
+                  <TiWeatherDownpour className="m-auto" size={200} />
+                </div>
+                <div className="w-3/4 h-42 bg-opacity-10 bg-white rounded-lg mt-10">
+                  <h1 className="text-center mt-10 dark:text-white text-black">
+                    No City Searched
+                  </h1>
+                  <TiWeatherDownpour className="m-auto mb-5" size={180} />
+                </div>
+              </>
             )}
           </Suspense>
         </ErrorBoundary>
