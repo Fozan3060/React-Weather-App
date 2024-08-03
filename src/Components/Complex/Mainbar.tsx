@@ -4,16 +4,13 @@ import { useWeatherContext } from "../../Context/WeatherContext";
 import LazySuneventCard from "../lazyloaded/LazySuneventCard";
 import LazyWeatherMetrics from "../lazyloaded/LazyWeatherMetrics";
 import LazyWeatherForecastCard from "../lazyloaded/LazyWeatherForecastCard";
+import MainbarDefaultImages from "../Default_Fallback/MainbarDefaultImages";
 
 const WeatherForecastCard = lazy(() => import("./WeatherForecastCard"));
 const DetailedWeatherCard = lazy(() => import("./DetailedWeatherCard"));
 
 const FallbackComponent: React.FC = () => (
-  <div role="alert">
-    <h1 className="text-center mt-5 text-white">
-      Please Make Sure Such City Exists
-    </h1>
-  </div>
+  <MainbarDefaultImages text="Incorrect City" />
 );
 
 const Mainbar: React.FC = () => {
@@ -39,9 +36,7 @@ const Mainbar: React.FC = () => {
               <WeatherForecastCard />
             </>
           ) : (
-            <h1 className="text-center mt-5 dark:text-white text-black">
-              No City Searched
-            </h1>
+            <MainbarDefaultImages text="No City Searched" />
           )}
         </Suspense>
       </ErrorBoundary>

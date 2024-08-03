@@ -5,16 +5,13 @@ import { useWeatherContext } from "../../Context/WeatherContext";
 import LazyCurrentWeatherCard from "../lazyloaded/LazyCurrentWeatherCard";
 import LazyTemperatureChart from "../lazyloaded/LazyTemperatureChart";
 import ThemeChanger from "../Compound/ThemeChanger";
+import SidebarDefaultImages from "../Default_Fallback/SidebarDefaultImages";
 
 const TemperatureChart = lazy(() => import("../Compound/TemperatureChart"));
 const CurrentWeatherCard = lazy(() => import("../Compound/CurrentWeatherCard"));
 
 const FallbackComponent: React.FC = () => (
-  <div role="alert">
-    <h1 className="text-center mt-5 text-white">
-      Please Make Sure Such City Exists
-    </h1>
-  </div>
+  <SidebarDefaultImages text="Incorrect City" />
 );
 
 const Sidebar: React.FC = () => {
@@ -42,9 +39,7 @@ const Sidebar: React.FC = () => {
                 <TemperatureChart />
               </>
             ) : (
-              <h1 className="text-center mt-5 dark:text-white text-black">
-                No City Searched
-              </h1>
+              <SidebarDefaultImages text="No City Searched" />
             )}
           </Suspense>
         </ErrorBoundary>

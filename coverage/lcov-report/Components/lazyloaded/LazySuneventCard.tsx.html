@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Components/Compound/FavCities.tsx</title>
+    <title>Code coverage report for Components/lazyloaded/LazySuneventCard.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">Components/Compound</a> FavCities.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">Components/lazyloaded</a> LazySuneventCard.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
@@ -91,68 +91,62 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import { BsStar, BsStarFill } from "react-icons/bs";
-import Button from "../Shared/Button";
-import { useWeatherContext } from "../../Context/WeatherContext";
 &nbsp;
-const FavCities: React.FC = () =&gt; {
-  const { searchCity, favCity, setFavCity } = useWeatherContext();
-&nbsp;
+const LazySuneventCard: React.FC = () =&gt; {
+  const array = ["Sunset", "Golden Hour", "Sunrise"];
   return (
-    &lt;Button
-      className="z-10"
-      testid="FavCity"
-      icon={
-        favCity.includes(searchCity) ? (
-          &lt;BsStarFill id="start_fill" color="yellow" size={22} /&gt;
-        ) : (
-          &lt;BsStar id="start_empty" size={22} color="white" /&gt;
-        )
-      }
-      description=""
-      onClick={() =&gt;
-        !favCity.includes(searchCity) &amp;&amp; searchCity !== ""
-          ? setFavCity((prev) =&gt; [...prev, searchCity])
-          : setFavCity((prev) =&gt; prev.filter((e) =&gt; e !== searchCity))
-      }
-    /&gt;
+    &lt;div className="flex justify-center gap-5 md:gap-10 mt-16  "&gt;
+      {array.map((item, index) =&gt; (
+        &lt;div
+          key={index}
+          className={`relative text-center font-sans  text-white ${index === 1 ? "bottom-7" : ""}`}
+        &gt;
+          &lt;h1
+            className={`${index === 1 ? "text-xl" : "text-lg"} font-light mb-8`}
+          &gt;
+            {item}
+          &lt;/h1&gt;
+          &lt;div
+            className={`bg-gray-300 flex justify-center items-center  ${index === 1 ? "h-56" : "h-52"} ${index !== 1 ? "px-3" : "px-0"}  rounded-[4rem] py-6`}
+          &gt;
+            &lt;h1&gt;Loading&lt;/h1&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
   );
 };
 &nbsp;
-export default FavCities;
+export default LazySuneventCard;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
