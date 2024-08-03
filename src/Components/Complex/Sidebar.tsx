@@ -43,20 +43,20 @@ const Sidebar: React.FC = () => {
                 <TemperatureChart />
               </>
             ) : (
-              <>
-                <div className="w-3/4 h-80 bg-opacity-10 bg-white rounded-lg mt-10">
+              <div className="flex justify-center w-[80%] lg:gap-0 sm:gap-10 flex-col sm:flex-row items-center lg:flex-col">
+                <div className=" h-80 w-[100%] bg-opacity-10 bg-white rounded-lg mt-10">
                   <h1 className="text-center mt-10 dark:text-white text-black">
                     No City Searched
                   </h1>
-                  <TiWeatherDownpour className="m-auto" size={200} />
+                  <TiWeatherDownpour className="m-auto " size={200} />
                 </div>
-                <div className="w-3/4 h-42 bg-opacity-10 bg-white rounded-lg mt-10">
+                <div className=" h-42 w-[100%] bg-opacity-10 bg-white rounded-lg mt-4">
                   <h1 className="text-center mt-10 dark:text-white text-black">
                     No City Searched
                   </h1>
                   <TiWeatherDownpour className="m-auto mb-5" size={180} />
                 </div>
-              </>
+              </div>
             )}
           </Suspense>
         </ErrorBoundary>
