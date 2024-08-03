@@ -157,6 +157,6 @@ describe("Weather App End-2-End testing", () => {
     useLazyloading("exist");
     showWeatherResults("not.exist");
     cy.wait(8000);
-    cy.contains("Please Make Sure Such City Exists");
+    cy.contains("Incorrect City");
   });
 });
