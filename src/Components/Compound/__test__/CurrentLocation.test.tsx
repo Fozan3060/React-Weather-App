@@ -91,7 +91,7 @@ describe("CurrentLocation Component Tests", () => {
           code: 1,
           PERMISSION_DENIED: 1,
           message:
-            "Geolocation is not enabled or not supported by this browser.",
+            "Current location denied",
           POSITION_UNAVAILABLE: 2,
           TIMEOUT: 3,
         }),
@@ -107,7 +107,7 @@ describe("CurrentLocation Component Tests", () => {
     );
 
     expect(window.alert).toHaveBeenCalledWith(
-      "Geolocation is not enabled or not supported by this browser.",
+      "Current location denied",
     );
   });
 });
