@@ -52,7 +52,7 @@ const WeatherAlert: React.FC = () => {
 
   const handleBellClick = (): void => {
     if (alerts.length === 0) {
-      toast.error("No notifications", {
+      toast.error(<h1 className="text-black ">No notifications</h1>, {
         duration: 4000,
         id: "No_Notification",
       });
