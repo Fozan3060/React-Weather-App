@@ -15,7 +15,10 @@ const WeatherAlert: React.FC = () => {
       data.alerts.alert.forEach((alert) => {
         toast(
           (t) => (
-            <div data-testid="auto_notify" className="">
+            <div
+              data-testid="auto_notify"
+              className="text-black "
+            >
               <div className="flex justify-end">
                 <Button
                   testid="auto_notify_Btn"
@@ -52,15 +55,26 @@ const WeatherAlert: React.FC = () => {
 
   const handleBellClick = (): void => {
     if (alerts.length === 0) {
-      toast.error(<h1 data-testid="weatherAlert_error" className="text-black ">No notifications</h1>, {
-        duration: 4000,
-        id: "No_Notification",
-      });
+      toast.error(
+        <h1
+          data-testid="weatherAlert_error"
+          className="text-black  "
+        >
+          No notifications
+        </h1>,
+        {
+          duration: 4000,
+          id: "No_Notification",
+        }
+      );
     } else {
       toast(
         (t) => (
-          <div data-testid="manual_notify">
-            <div className="flex justify-end">
+          <div
+            data-testid="manual_notify"
+            className="text-black "
+          >
+            <div className="flex justify-end ">
               <Button
                 testid="manual_notify_Btn"
                 onClick={() => toast.dismiss(t.id)}
