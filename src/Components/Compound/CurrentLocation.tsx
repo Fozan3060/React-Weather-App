@@ -20,9 +20,8 @@ const CurrentLocation: React.FC = () => {
   };
 
   const onError = (error: GeolocationPositionError): void => {
-    if (error) {
-      // eslint-disable-next-line no-alert
-      alert("Geolocation is not enabled or not supported by this browser.");
+    if (error.code === error.PERMISSION_DENIED) {
+      window.alert("Current location denied");
     }
   };
 
